@@ -40,6 +40,8 @@ class Dev(Configuration):
 
     INTERNAL_IPS = ["192.168.10.93"]
 
+    REGISTRATION_OPEN = True
+    
     # Application definition
 
     INSTALLED_APPS = [
@@ -100,6 +102,8 @@ class Dev(Configuration):
     }
 
     AUTH_USER_MODEL = "blango_auth.User"
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
     
     # Password validation
     # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
