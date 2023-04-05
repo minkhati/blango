@@ -69,6 +69,7 @@ class Dev(Configuration):
         "allauth.socialaccount.providers.google",
         "rest_framework",
         "rest_framework.authtoken",
+        "drf_yasg",
     ]
 
     REST_FRAMEWORK = {
@@ -93,6 +94,14 @@ class Dev(Configuration):
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ]
 
+    SWAGGER_SETTINGS = {
+        "SECURITY_DEFINITIONS": {
+            "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+            "Basic": {"type": "basic"},
+        }
+    }
+
+    
     ROOT_URLCONF = 'blango.urls'
 
     TEMPLATES = [
