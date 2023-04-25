@@ -2,6 +2,7 @@
 {% load blog_extras %}
 
 {% block content %}
+  
    <h2>Blog Posts</h2>
     {% for post in posts %}
       {% row "border-bottom" %}
@@ -19,4 +20,5 @@
           {% endcol %}
       {% endrow %}
     {% endfor %}
+  
 {% endblock %}
